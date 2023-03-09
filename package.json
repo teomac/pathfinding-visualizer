@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://magicteo.github.io/pathfinding-visualizer"
+  "homepage" : "https://magicteo.github.io/pathfinding-visualizer",
   "name": "pathfinding-visualizer",
   "version": "0.1.0",
   "private": true,
