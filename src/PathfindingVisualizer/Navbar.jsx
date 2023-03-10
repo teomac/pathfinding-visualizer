@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 
-const brand = window.innerWidth > 600 ? "Pathfinding Visualizer" : "Pathfinder";
 
 class NavBar extends Component {
   state = {
@@ -45,6 +44,10 @@ class NavBar extends Component {
         this.props.visualizeDijkstra();
       else if (this.state.algorithm === "Visualize A*")
         this.props.visualizeAStar();
+      else if (this.state.algorithm === "Visualize Breadth First Search")
+        this.props.visualizeBFS();
+      else if (this.state.algorithm === "Visualize Depth First Search")
+        this.props.visualizeDFS();
     }
   }
 
@@ -77,7 +80,7 @@ class NavBar extends Component {
           className="navbar-brand h1 mb-0"
           href="https://github.com/magicteo/pathfinding-visualizer"
         >
-          {brand}
+          &nbsp;&nbsp;Pathfinding Visualizer
         </a>
         <Dropdown>
           <Dropdown.Toggle className="btn btn-light dropdown-toggle">
@@ -91,6 +94,12 @@ class NavBar extends Component {
             <Dropdown.Item
               className="dropdown-item btn-light"
               onClick={() => this.selectAlgorithm("Visualize A*")}>A*</Dropdown.Item>
+            <Dropdown.Item
+              className="dropdown-item btn-light"
+              onClick={() => this.selectAlgorithm("Visualize Breadth First Search")}>Breadth First Search</Dropdown.Item>
+            <Dropdown.Item
+              className="dropdown-item btn-light"
+              onClick={() => this.selectAlgorithm("Visualize Depth First Search")}>Depth First Search</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <li>
@@ -107,6 +116,14 @@ class NavBar extends Component {
             onClick={() => this.clearGrid()}
           >
             Clear Grid
+          </button>
+        </li>
+        <li>
+          <button
+            className="btn btn-light"
+            onClick={() => window.location.reload(false)}
+          >
+            Restart
           </button>
         </li>
       </nav>
