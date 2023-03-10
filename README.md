@@ -6,4 +6,4 @@ It includes:
 * Dijkstra's algorithm
 * A star
 * Breadth First Search
-* Depth First Search.
+* Depth First Search
